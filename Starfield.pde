@@ -33,7 +33,7 @@ class NormalParticle
 	{
 		myX = (Math.random()*1000);
 		myY = (Math.random()*1000);
-		angle = 20;
+		angle = Math.PI/12;
 		speed = (Math.random()*7);
 		myColor = color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
 	}
@@ -45,7 +45,7 @@ class NormalParticle
 	void show()
 	{
 		fill(myColor);
-		rect((float)myX,(float)myY,6,6);
+		ellipse((float)myX,(float)myY,6,6);
 
 	}
 }
