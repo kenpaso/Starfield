@@ -26,6 +26,7 @@ void mousePressed()
  	{
  		billion[i] = new NormalParticle();
  		billion[0] = new OddballParticle();
+ 		billion[1] = new JumboParticle();
  		billion[i].move();	
  		billion[i].show();
  	}	
