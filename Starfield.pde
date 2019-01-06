@@ -1,8 +1,8 @@
 Particle [] billion;
 void setup()
 {
-	size(1000,1000);
- 	billion = new Particle[1000];
+	size(500,500);
+ 	billion = new Particle[1200];
  	for(int i = 0; i < billion.length; i++)
  	{
  		billion[i] = new NormalParticle();
@@ -42,8 +42,8 @@ class NormalParticle implements Particle
 
 	NormalParticle()
 	{
-		myX = 500;
-		myY = 500;
+		myX = 250;
+		myY = 250;
 		angle = (Math.random()*2*(Math.PI));
 		speed = (Math.random()*2);
 		myColor = color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
@@ -53,10 +53,10 @@ class NormalParticle implements Particle
 		myX = myX + (Math.cos(angle)*speed);
 		myY = myY + (Math.sin(angle)*speed);
 
-		if(myX<-500 || myX>1500){
+		if(myX<-250 || myX>750){
 			speed= -speed;
 		}
-		if(myY<-500 || myY>1500){
+		if(myY<-250 || myY>750){
 			speed= -speed;
 		}
 
@@ -64,11 +64,10 @@ class NormalParticle implements Particle
 	}
 	public void show()
 	{
-		//pushMatrix();
-		//translate(500,500);
+		//translate(250,250);
 		//rotate(PI/4);	
 		fill(myColor);
-		rect((float)myX,(float)myY,12,12);
+		rect((float)myX,(float)myY,6,6);
 		//popMatrix();			
 
 	}
@@ -88,10 +87,10 @@ class OddballParticle implements Particle
 
 	OddballParticle()
 	{
-		myX = 500;
-		myY = 500;
-		angle = (Math.random()*2*Math.PI);
-		speed = (Math.random()*7);
+		myX = 250;
+		myY = 250;
+		angle = (Math.random()*1*Math.PI);
+		speed = (Math.random()*4);
 		myColor = color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
 	}
 	public void move()
@@ -103,8 +102,9 @@ class OddballParticle implements Particle
 	}
 	public void show()
 	{
+		background(255);
 		fill(255);
-		ellipse((float)myX,(float)myY,50,50);
+		ellipse((float)myX,(float)myY,30,30);
 	}	
 }
 class JumboParticle extends NormalParticle
@@ -113,7 +113,7 @@ class JumboParticle extends NormalParticle
 	public void show()
 	{
 		fill(myColor);
-		rect((float)myX,(float)myY,200,200);
+		rect((float)myX,(float)myY,50,50);
 	}
 }
 
